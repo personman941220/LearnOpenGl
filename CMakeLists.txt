@@ -6,7 +6,7 @@ cmake_minimum_required (VERSION 3.8)
 project ("OPENGI")
 
 # 将源代码添加到此项目的可执行文件。
-add_executable (OPENGI "opengl1_c.cpp" "opengl1_c.h" "deps/glad/include/glad/glad.h" "deps/glad/include/KHR/khrplatform.h" "deps/glad/src/glad.c" "deps/glfw_win/include/GLFW/glfw3.h" "deps/glfw_win/include/GLFW/glfw3native.h" "src/SHADER_S.h" )
+add_executable (OPENGI "opengl1_c.cpp" "opengl1_c.h" "deps/glad/include/glad/glad.h" "deps/glad/include/KHR/khrplatform.h" "deps/glad/src/glad.c" "deps/glfw_win/include/GLFW/glfw3.h" "deps/glfw_win/include/GLFW/glfw3native.h" "src/SHADER_S.h"  "src/path.h")
 
 # TODO: 如有需要，请添加测试并安装目标。
 

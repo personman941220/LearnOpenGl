@@ -6,6 +6,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include "SHADER_S.h"
+#include "path.h"
 using namespace std;
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
@@ -79,6 +80,8 @@ const char* fragmentShaderSource1 = "#version 330 core\n"
 
 int main()
 {
+    //添加shader路径
+    path path;
     //初始化 glfw
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -159,7 +162,9 @@ int main()
     //glDeleteShader(fragmentShader);
     //glDeleteShader(fragmentShader1);
     //使用自己的着色器类
-    Shader ourShader("C:\\Users\\zsk\\source\\repos\\OpenGl\\shader\\shader_vs.hlsl", "C:\\Users\\zsk\\source\\repos\\OpenGl\\shader\\shader_fs.hlsl");
+    Shader ourShader(path.getPath()+"\\shader_vs.hlsl", path.getPath() + "\\shader_fs.hlsl");
+    float offset = 0.5f;
+    ourShader.setFloat("xOffset", offset);
    /* glDeleteShader(fragmentShader1);*/
     //设置顶点数据
     float vertices[] = {
