@@ -248,6 +248,7 @@ int main()
     {
         std::cout << "Failed to load texture" << std::endl;
     }
+    //释放图像内存
     stbi_image_free(data);
 
     
